@@ -19,6 +19,8 @@
 
 	require_once 'Classes/ApkParser/ApkParser.php';
 
+	require_once 'cleanup.php';
+
 /*
 * $tempFile : handle of uploaded temp file
 * return value : is temp file available
@@ -342,6 +344,7 @@
 
 		//Remove temp file
 		DeleteDir("Temp");
+		cleanup($identifier, 20);
 	}
 	main();
 ?>
